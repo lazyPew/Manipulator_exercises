@@ -32,7 +32,7 @@ int main(int argc, char *argv[]){
     Manipulator manip1(0,0,1);
     Manipulator manip2(6,8,1);
     
-    checkManipulatorToMove(manip1,manip2,3,4);
+    PointChecker::ChseckervcheckManipulatorToMove(manip1,manip2,3,4);
 
 
     return 0;
