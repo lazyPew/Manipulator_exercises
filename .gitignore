@@ -7,3 +7,5 @@ exercises.docx
 /Lippgardt_test.sln
 manipulator
 /x64/Debug
+.vscode/
+/build

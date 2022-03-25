@@ -25,6 +25,8 @@ public:
 private:
     std::pair<double,double> _coords;
     double _radius;
+
+    // map<int,std::pair<double,double>> _pointsToMove;
     PointList _pointsToMove;
 
 };

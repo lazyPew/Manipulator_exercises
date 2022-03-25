@@ -8,11 +8,9 @@
 #include "ParserGCODE.h"
 
 using namespace std;
-//using PointList = std::list<std::pair<double, double>>;
 
 ExerciseController::ExerciseController()
-{
-}
+{}
 
 void ExerciseController::beginWork()
 {
@@ -20,7 +18,7 @@ void ExerciseController::beginWork()
 
     while (exercise != 0)
     {
-        cout << "All values are preset and can be changed in corresponding methods in ExerciseController.cpp\n" 
+        cout << "All values are preset and can be changed in ExerciseController.cpp and GCODE file\n" 
             << "Select an option: \n"
             << "1) Exercise 1\n"
             << "2) Exercise 2\n"
@@ -28,7 +26,7 @@ void ExerciseController::beginWork()
             << "0) Finish program" << endl;
         cin >> exercise;
         if (!cin.fail()) {
-            cout << "Selected option:" << exercise << endl;
+            cout << "Selected option:" << exercise  << "\n" << endl;
             switch (exercise) {
             case 1:
                 firstExercise();
@@ -41,9 +39,10 @@ void ExerciseController::beginWork()
             default:
                 break;
             }
+            cout << endl;
         }
         else {
-            cout << "Incorrect input" << endl;
+            cout << "Incorrect input. Finishing program." << endl;
         }
     }
 }

@@ -20,8 +20,6 @@ double Manipulator::distanceToThePoint(double x_dest, double y_dest)
 }
 
 void Manipulator::moveToTheNextPoint(double x_next, double y_next){
-	std::cout << x_next << " " << y_next << std::endl;
-
 	setNewCoords(x_next, y_next);
 	_pointsToMove.push_back({ x_next,y_next });
 }

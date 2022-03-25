@@ -33,16 +33,10 @@ void PointChecker::checkManipulatorToMove(Manipulator& man1, Manipulator& man2, 
 
 void PointChecker::moveManipulators(Manipulator& man1, Manipulator& man2, PointList pointList){
     for (const auto& point : pointList) {
-        //cout << man1.distanceToThePoint(point.first, point.second) << " " << man2.distanceToThePoint(point.first, point.second) << endl;
         if (man1.distanceToThePoint(point.first, point.second) < man2.distanceToThePoint(point.first, point.second))
-        {
-            cout <<"MAN 1  " ;
             man1.moveToTheNextPoint(point.first, point.second);
-        }
-        else {
-            cout << "MAN 2  " ;
+        else 
             man2.moveToTheNextPoint(point.first, point.second);
-        }
     }
 }
 
