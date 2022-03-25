@@ -1,12 +1,14 @@
 #pragma once
-#include "manipulator.hpp"
+#include <iostream>
 
-class Manipulator3D : public Manipulator
+class Manipulator3D
 {
 public:
-	Manipulator3D(double x_orig, double y_orig, double z_orig, double radius);
+	Manipulator3D(int x_orig, int y_orig, int z_orig);
 
-	void setNewCoords(double, double, double);
+	void setNewCoords(int, int, int);
 private:
+	double _x;
+	double _y;
 	double _z;
 };

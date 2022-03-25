@@ -3,7 +3,9 @@
 
 #include "ExerciseController.h"
 #include "manipulator.hpp"
+#include "manipulator3d.hpp"
 #include "pointChecker.hpp"
+#include "ParserGCODE.h"
 
 using namespace std;
 //using PointList = std::list<std::pair<double, double>>;
@@ -18,7 +20,8 @@ void ExerciseController::beginWork()
 
     while (exercise != 0)
     {
-        cout << "Select an option: \n"
+        cout << "All values are preset and can be changed in corresponding methods in ExerciseController.cpp\n" 
+            << "Select an option: \n"
             << "1) Exercise 1\n"
             << "2) Exercise 2\n"
             << "3) Exercise 3\n"
@@ -70,4 +73,9 @@ void ExerciseController::secondExercise()
 
 void ExerciseController::thirdExercise()
 {
+    ParserGCODE parser("GCODE");
+
+    parser.parseFileForManipulator();
+
+    
 }
