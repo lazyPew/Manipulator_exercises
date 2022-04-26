@@ -1,9 +1,8 @@
 #include "pointChecker.hpp"
 
 using namespace std;
-using PointList = std::list<std::pair<double, double>>;
 
-void PointChecker::checkManipulatorToMove(Manipulator& man1, Manipulator& man2, std::pair<double, double> destinationPoint){
+void PointChecker::checkManipulatorToMove(Manipulator& man1, Manipulator& man2, Point destinationPoint){
     checkManipulatorToMove(man1, man2, destinationPoint.first, destinationPoint.second);
 }
 
@@ -16,19 +15,21 @@ void PointChecker::checkManipulatorToMove(Manipulator& man1, Manipulator& man2, 
         return;
     }
 
-    if ((man1.radius() >= distance_manipulator1) && (man2.radius() >= distance_manipulator2)) {
-        if (distance_manipulator1 > distance_manipulator2)
-            cout << "Manipulator 2 is closer. Moving Maniplator 2." << endl;
-        else if (distance_manipulator1 < distance_manipulator2)
-            cout << "Manipulator 1 is closer. Moving Maniplator 1." << endl;
-        else
-            cout << "Manipulator 1 and Manipulator 2 are equally close" << endl;
-    }
+    if ((man1.radius() >= distance_manipulator1) && (man2.radius() >= distance_manipulator2))
+        checkWhichIsCloser(distance_manipulator1,distance_manipulator2);
     else if (man1.radius() >= distance_manipulator1)
         cout << "Moving Maniplator 1." << endl;
-
     else
         cout << "Moving Maniplator 2." << endl;
+}
+
+void PointChecker::checkWhichIsCloser(double distance1, double distance2){
+    if (distance1 > distance2)
+        cout << "Manipulator 2 is closer. Moving Maniplator 2." << endl;
+    else if (distance1 < distance2)
+        cout << "Manipulator 1 is closer. Moving Maniplator 1." << endl;
+    else
+        cout << "Manipulator 1 and Manipulator 2 are equally close" << endl;
 }
 
 void PointChecker::moveManipulators(Manipulator& man1, Manipulator& man2, PointList pointList){

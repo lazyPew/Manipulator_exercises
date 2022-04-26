@@ -73,8 +73,5 @@ void ExerciseController::secondExercise()
 void ExerciseController::thirdExercise()
 {
     ParserGCODE parser("GCODE");
-
     parser.parseFileForManipulator();
-
-    
 }

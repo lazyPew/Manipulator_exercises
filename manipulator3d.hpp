@@ -4,10 +4,9 @@
 class Manipulator3D
 {
 public:
-// double
-	Manipulator3D(int x_orig, int y_orig, int z_orig);
+	Manipulator3D(double x_orig, double y_orig, double z_orig);
 
-	void moveManipulator(int, int, int);
+	void moveManipulator(double, double, double);
 	void printCoords();
 private:
 	double _x;

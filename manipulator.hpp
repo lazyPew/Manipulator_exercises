@@ -3,15 +3,16 @@
 #include <math.h>
 #pragma once
 
-using PointList = std::list<std::pair<double, double>>;
+using Point = std::pair<double, double>;
+using PointList = std::list<Point>;
 
 class Manipulator{
 public:
     Manipulator(double x_origin, double y_origin, double radius);
-    Manipulator(std::pair<double,double>, double radius);
+    Manipulator(Point, double radius);
 
     double radius() const                    { return _radius; }
-    std::pair<double, double> coords() const { return _coords; }
+    Point coords() const                     { return _coords; }
     PointList pointsToMove() const           { return _pointsToMove; }
 
     virtual void setNewCoords(double, double);
@@ -23,10 +24,9 @@ public:
     void printPoints();
 
 private:
-    std::pair<double,double> _coords;
+    Point _coords;
     double _radius;
 
-    // map<int,std::pair<double,double>> _pointsToMove;
     PointList _pointsToMove;
 
 };

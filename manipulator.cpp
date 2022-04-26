@@ -4,7 +4,7 @@ Manipulator::Manipulator(double x, double y, double radius)
 	: Manipulator::Manipulator(std::make_pair(x,y), radius)
 {}
 
-Manipulator::Manipulator(std::pair<double,double> coordsToSet, double radius)
+Manipulator::Manipulator(Point coordsToSet, double radius)
 	: _coords{coordsToSet}
 	, _radius{radius}
 {}
